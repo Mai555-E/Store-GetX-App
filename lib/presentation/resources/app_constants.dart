@@ -1,0 +1,101 @@
+import 'package:flutter/material.dart';
+
+class AppConstants {
+  static const double padding = 20;
+
+  static const OnboardingContent onboardingContent = [
+    (image: "", title: "Seamless Shopping Experience", subtitle: "Get Started with Personalized Style Recommendations"),
+    (image: "", title: "Wishlist: Where Fashion Dreams Begin", subtitle: "You’re All Set—Enjoy Your New Fashion"),
+    (image: "", title: "Swift And Reliable Delivery", subtitle: "Stay on-trend with the latest styles delivered straight to your phone"),
+  ];
+
+  static List<String> locations = [
+    'Cairo',
+    'Alexandria',
+    'Giza',
+    'Port Said',
+    'Suez',
+    'Shubra El Kheima',
+    'Luxor',
+    'Aswan',
+    'Asyut',
+    'Qena',
+    'Sohag',
+    'Minya',
+    'Beni Suef',
+    'Fayoum',
+    'Gharbia',
+    'Daqahlia',
+    'Kafr El Sheikh',
+    'Behaira',
+    'Ismailia',
+    'Sharqia',
+    'Matruh',
+    'Red Sea',
+    'North Sinai',
+    'South Sinai'
+  ].map((location) => "$location, Egypt").toList();
+
+  static const CarouselSliderData carouselSliderData = [
+    (images: "assets/images/g.png", title: "New Collection", subTitle: "Discount %50 for the first transaction "),
+    (images: "assets/images/g.png", title: "New Arrivals", subTitle: "Discount %40 for the second transaction "),
+    (images: "assets/images/g.png", title: "New Arrivals", subTitle: "Discount %50 for the first transaction "),
+    (images: "assets/images/g.png", title: "New Collection", subTitle: "50% OFF on Summer Collection!"),
+    (images: "assets/images/g.png", title: "Buy One Get One Free", subTitle: "Discount %50 for the first transaction "),
+  ];
+
+  static const CategoryIcons categoryIcons = [
+    (image: "assets/images/tt.png", name: "T-Shirt"),
+    (image: "assets/images/pant.jpg", name: "Pant"),
+    (image: "assets/images/dress.jpg", name: "Dress"),
+    (image: "assets/images/jacket.jpg", name: "Jacket"),
+  ];
+  static const PaymentCategories paymentOption = [
+    (image: "assets/images/paypal.png", title: "PayPal"),
+    (image: "assets/images/social-media.png", title: "Apple Pay"),
+    (image: "assets/images/search.png", title: "Google Pay"),
+  ];
+
+  static const  CouponesDetails couponDetails = [
+    (header: "Welcom200",content: "Add items worth \$5 more to unlock",discount:"Get 50% off"),
+    (header: "CashBack12",content: "Add items worth \$28 more to unlock",discount:"Get 50% off Combo"),
+    (header: "Welcom200",content: "Add items worth \$20 more to unlock",discount:"Get 50% off"),
+    (header: "FEST2COST",content: "Add items worth \$15 more to unlock",discount:"Up to \$12 cashback"),
+    
+
+  ];
+  static const ShippingCategories shippingCategories = [
+    (address: "Economy", location: "Estimated arrival time 25 May 2025", icon: Icons.car_rental_rounded),
+    (address: "Regular", location: "Estimated arrival time 25 May 2025", icon: Icons.car_rental_rounded),
+    (address: "Cargo", location: "Estimated arrival time 25 May 2025", icon: Icons.car_rental_rounded),
+    (address: "Friend's House ", location: "Estimated arrival time 25 May 2025", icon: Icons.car_rental_rounded),
+  ];
+
+  static const List<String> chips = ["All", "Newest", "Popular", "Man", "Woman"];
+
+  static final List<({IconData icon, IconData iconFilled})> navigationData = [
+    (icon: Icons.home_outlined, iconFilled: Icons.home_filled),
+    (icon: Icons.shopping_bag_outlined, iconFilled: Icons.shopping_bag_rounded),
+    (icon: Icons.favorite_outline_rounded, iconFilled: Icons.favorite_rounded),
+    (icon: Icons.chat_bubble_outline_rounded, iconFilled: Icons.chat_bubble_rounded),
+    (icon: Icons.person_pin, iconFilled: Icons.person_pin)
+  ];
+
+  static const List<({String title, IconData icon})> profileTiles = [
+    (title: "Your Profile", icon: Icons.person),
+    (title: "My Orders", icon: Icons.list_alt_rounded),
+    (title: "Settings", icon: Icons.settings),
+    (title: "Payment Methods", icon: Icons.payment_rounded),
+    (title: "Help Center", icon: Icons.help_outline_rounded),
+    (title: "Privacy Policy", icon: Icons.lock_rounded),
+    (title: "Invites Friends", icon: Icons.group_add_outlined),
+    (title: "Log Out", icon: Icons.logout_rounded)
+  ];
+}
+
+typedef CategoryIcons = List<({String image, String name})>;
+typedef OnboardingContent = List<({String image, String title, String subtitle})>;
+typedef CarouselSliderData = List<({String title, String subTitle, String images})>;
+typedef ShippingCategories = List<({String location, String address, IconData icon})>;
+typedef PaymentCategories = List<({String image, String title})>;
+typedef CouponesDetails = List<({String header, String content, String discount})>;
