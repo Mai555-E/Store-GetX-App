@@ -6,6 +6,7 @@ import '../../../resources/app_assets.dart';
 
 import '../../../resources/app_colors.dart';
 import '../../../resources/app_constants.dart';
+import '../widgets/shareable_widget_main_view.dart';
 
 class HomePage extends StatelessWidget {
   static RxInt currentIndex = 0.obs;
@@ -46,6 +47,8 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  
+
   Row _buildLocationAndNotification() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,6 +88,9 @@ class HomePage extends StatelessWidget {
     );
   }
 
+
+
+
   Row _buildSearchAndFilter() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -113,6 +119,10 @@ class HomePage extends StatelessWidget {
       ],
     );
   }
+
+
+
+  
 
   SizedBox _buildCarouselSliderWithDots() {
     return SizedBox.fromSize(
@@ -262,38 +272,6 @@ class HomePage extends StatelessWidget {
             // Price
             const Text("\$83.97")
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class TypesChips extends StatefulWidget {
-  static int selectedChipIndex = 0;
-  const TypesChips({super.key});
-
-  @override
-  State<TypesChips> createState() => _TypesChipsState();
-}
-
-class _TypesChipsState extends State<TypesChips> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: SizedBox.fromSize(
-        size: const Size.fromHeight(50),
-        child: ListView.separated(
-          scrollDirection: Axis.horizontal,
-          itemCount: AppConstants.chips.length,
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          separatorBuilder: (_, __) => const SizedBox(width: 8),
-          itemBuilder: (_, index) => ChoiceChip(
-            label: Text(AppConstants.chips[index]),
-            selected: TypesChips.selectedChipIndex == index,
-            onSelected: (selected) => setState(() => TypesChips.selectedChipIndex = index),
-            labelStyle: TextStyle(color: TypesChips.selectedChipIndex == index ? Colors.white : Colors.black),
-          ),
         ),
       ),
     );

@@ -13,6 +13,7 @@ class AppTheme {
         centerTitle: true,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(size: 20),
+        titleTextStyle:  TextStyle(fontSize: 19, fontWeight: FontWeight.w500,color: Colors.black)
       ),
 
       // TextFormField

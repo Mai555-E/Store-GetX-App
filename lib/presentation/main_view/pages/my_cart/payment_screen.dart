@@ -19,19 +19,16 @@ class PaymentScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Align(
-                  child: Container(
-                    width: 110,
-                    height: 110,
-                    margin: const EdgeInsets.only(bottom: 15),
-                    decoration: const BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
-                    child: const Icon(Icons.check, size: 70, color: Colors.white),
-                  ),
-                ),
+                    child: Container(
+                        width: 110,
+                        height: 110,
+                        margin: const EdgeInsets.only(bottom: 15),
+                        decoration: const BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
+                        child: const Icon(Icons.check, size: 70, color: Colors.white))),
                 const Text("Payment Successful!", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
                 const Padding(
-                  padding: EdgeInsets.only(top: 13),
-                  child: Text("Thank you for your purchase.", style: TextStyle(color: AppColors.secondary)),
-                ),
+                    padding: EdgeInsets.only(top: 13),
+                    child: Text("Thank you for your purchase.", style: TextStyle(color: AppColors.secondary)))
               ],
             ),
           ),
@@ -63,7 +60,8 @@ class CustomPaymentButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                  child: ElevatedButton(onPressed: () {}, style: ElevatedButton.styleFrom(fixedSize: const Size.fromWidth(250)), child: Text(title))),
+                  child: ElevatedButton(
+                      onPressed: () {}, style: ElevatedButton.styleFrom(fixedSize: const Size.fromWidth(250)), child: Text(title))),
               const Text("View E-Receipt", style: TextStyle(color: AppColors.primary, fontSize: 17))
             ],
           ),

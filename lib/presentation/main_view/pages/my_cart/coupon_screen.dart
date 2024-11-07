@@ -12,7 +12,7 @@ class CouponScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: const LeadingAppBar(title: "Coupon"), // style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500)
+      appBar: const LeadingAppBar(title: "Coupon"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -20,17 +20,14 @@ class CouponScreen extends StatelessWidget {
           children: [
             const CustomText(title: "Best offer for you"),
             Expanded(
-              child: ListView.separated(
-                itemCount: 4,
-                scrollDirection: Axis.vertical,
-                separatorBuilder: (_, __) => const SizedBox(height: 8),
-                itemBuilder: (_, index) => RepeatedCouponText(
-                  header: AppConstants.couponDetails[index].header,
-                  content: AppConstants.couponDetails[index].content,
-                  discount: AppConstants.couponDetails[index].discount,
-                ),
-              ),
-            )
+                child: ListView.separated(
+                    itemCount: 4,
+                    scrollDirection: Axis.vertical,
+                    separatorBuilder: (_, __) => const SizedBox(height: 8),
+                    itemBuilder: (_, index) => RepeatedCouponText(
+                        header: AppConstants.couponDetails[index].header,
+                        content: AppConstants.couponDetails[index].content,
+                        discount: AppConstants.couponDetails[index].discount)))
           ],
         ),
       ),
@@ -63,44 +60,38 @@ class RepeatedCouponText extends StatelessWidget {
                   children: [
                     Text(header, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
                     Text(content, style: const TextStyle(color: AppColors.grey)),
-                    Row(
-                      children: [
-                        const Icon(Icons.discount_rounded),
-                        Text(discount, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
-                      ],
-                    ),
+                    Row(children: [
+                      const Icon(Icons.discount_rounded),
+                      Text(discount, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500))
+                    ])
                   ],
                 ),
               ),
               GestureDetector(
-                onTap: () {},
-                child: Container(
-                  height: 70,
-                  width: double.maxFinite,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(color: Color(0xfff6f6f6)),
-                  child: const Text("COPY CODE", textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400)),
-                ),
-              )
+                  onTap: () {},
+                  child: Container(
+                      height: 70,
+                      width: double.maxFinite,
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(color: Color(0xfff6f6f6)),
+                      child: const Text("COPY CODE",
+                          textAlign: TextAlign.center, style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400))))
             ],
           ),
         ),
         Positioned(
           right: 0,
           child: Container(
-            width: 30,
-            height: 30,
-            decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle, border: Border(left: BorderSide())),
-          ),
+              width: 30,
+              height: 30,
+              decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle, border: Border(left: BorderSide()))),
         ),
         Positioned(
-          left: 0,
-          child: Container(
-            width: 30,
-            height: 30,
-            decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle, border: Border(right: BorderSide())),
-          ),
-        ),
+            left: 0,
+            child: Container(
+                width: 30,
+                height: 30,
+                decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle, border: Border(right: BorderSide())))),
       ],
     );
   }

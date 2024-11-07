@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/e_receipt_screen.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/leave_review_screen.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/my_orders.dart';
+import 'package:store_getx_app/presentation/main_view/pages/my_cart/filter_screen.dart';
+import 'package:store_getx_app/presentation/main_view/pages/my_cart/help_center_screen.dart';
+import 'package:store_getx_app/presentation/main_view/pages/my_cart/notification_screen.dart';
+import 'package:store_getx_app/presentation/main_view/pages/my_cart/track_order_screen.dart';
 
 import '../auth/forget_password_screen.dart';
 import '../auth/sign_in_screen.dart';
@@ -13,7 +14,10 @@ import '../main_view/pages/home/product_details.dart';
 import '../main_view/pages/my_cart/checkout_screen.dart';
 import '../main_view/pages/my_cart/choose_shipping_screen.dart';
 import '../main_view/pages/my_cart/coupon_screen.dart';
+import '../main_view/pages/my_cart/e_receipt_screen.dart';
+import '../main_view/pages/my_cart/leave_review_screen.dart';
 import '../main_view/pages/my_cart/my_cart_page.dart';
+import '../main_view/pages/my_cart/my_orders.dart';
 import '../main_view/pages/my_cart/payment_methods_screen.dart';
 import '../main_view/pages/my_cart/payment_screen.dart';
 import '../main_view/pages/my_cart/shopping_address_screen.dart';
@@ -45,19 +49,23 @@ class NamedRoutes {
   static const String productDetails = "/productDetails";
 
   // MyCart Page
+  static const String myOrders = "/myOrders";
   static const String myCartPage = "/myCartPage";
+  static const String filterScreen = "/filterScreen";
   static const String couponScreen = "/couponScreen";
+  static const String receiptScreen = "/receiptScreen";
   static const String paymentScreen = "/paymentScreen";
   static const String checkoutScreen = "/checkoutScreen";
-  static const String leaveReviewScreen = "/leaveReviewScreen";
+  static const String trackOrderScreen = "/trackOrderScreenScreen";
+
+  static const String notificationScreen = "/notificationScreen";
   static const String paymentMethods = "/paymentMethods";
   static const String shippingScreen = "/shippingScreen";
   static const String visaCardScreen = "/visaCardScreen";
   static const String shoppingAddress = "/shoppingAddress";
-  static const String myOrders = "/myOrders";
-  static const String receiptScreen = "/receiptScreen";
-
-
+  static const String leaveReviewScreen = "/leaveReviewScreen";
+  static const String helpCenterScreen = "/helpCenterScreen";
+  
   // Profile Page
   static const String profilePage = "/profilePage";
   static const String settingsScreen = "/settingsScreen";
@@ -85,18 +93,23 @@ class RouteGenerator {
 
       // MyCart
       GetPage(name: NamedRoutes.myOrders, page: () => const MyOrders()),
-      GetPage(name: NamedRoutes.myCartPage, page: () => const MyCartPage()),
+      GetPage(name: NamedRoutes.myCartPage, page: () => const MyCartPage(orders: [])),
       GetPage(name: NamedRoutes.couponScreen, page: () => const CouponScreen()),
       GetPage(name: NamedRoutes.paymentScreen, page: () => const PaymentScreen()),
       GetPage(name: NamedRoutes.visaCardScreen, page: () => const VisaCardScreen()),
       GetPage(name: NamedRoutes.leaveReviewScreen, page: () => const LeaveReviewScreen()),
-
-      GetPage(name: NamedRoutes.checkoutScreen, page: () => const CheckoutScreen()),
+      GetPage(name: NamedRoutes.helpCenterScreen, page: () => const HelpCenterScreen()),
+       
+      GetPage(name: NamedRoutes.filterScreen, page: () => const FilterScreen()),
+      GetPage(name: NamedRoutes.receiptScreen, page: () => const ReceiptScreen()),
+      GetPage(name: NamedRoutes.trackOrderScreen, page: () => const TrackOrderScreen()),
+      GetPage(name: NamedRoutes.checkoutScreen, page: () => const CheckoutScreen(orders: [])),
+      GetPage(name: NamedRoutes.notificationScreen, page: () => const NotificationScreen()),
+       
       GetPage(name: NamedRoutes.shippingScreen, page: () => const ChooseShippingScreen()),
       GetPage(name: NamedRoutes.paymentMethods, page: () => const PaymentMethodsScreen()),
       GetPage(name: NamedRoutes.shoppingAddress, page: () => const ShoppingAddressScreen()),
-      GetPage(name: NamedRoutes.receiptScreen, page: () => const ReceiptScreen()),
-      
+
       // Profile
       GetPage(name: NamedRoutes.profilePage, page: () => const ProfilePage()),
       GetPage(name: NamedRoutes.updateProfile, page: () => const UpdateProfile()),

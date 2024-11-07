@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:store_getx_app/presentation/widgets/leading_app_bar.dart';
 
 import '../../../../domain/order.dart';
 import '../../../../domain/product.dart';
@@ -13,12 +14,7 @@ class LeaveReviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Leave Review",
-          style: TextStyle(fontWeight: FontWeight.w500),
-        ),
-      ),
+      appBar: const LeadingAppBar(title: "Leave Review"),
       backgroundColor: const Color(0xffffffff),
       body: SafeArea(
         child: Center(
@@ -64,14 +60,10 @@ class LeaveReviewScreen extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(width: 140, child: ElevatedButton(onPressed: () {}, child: const Text("Cancel"))),
-                    SizedBox(width: 140, child: ElevatedButton(onPressed: () {}, child: const Text("submit")))
-                  ],
-                ),
-              )
+                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+                SizedBox(width: 140, child: ElevatedButton(onPressed: () {}, child: const Text("Cancel"))),
+                SizedBox(width: 140, child: ElevatedButton(onPressed: () {}, child: const Text("submit")))
+              ]))
             ],
           ),
         ),

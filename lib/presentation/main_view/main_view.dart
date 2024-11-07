@@ -18,7 +18,7 @@ class _MainViewState extends State<MainView> {
   bool isSelected(int index) => currentIndex == index;
 
   // TODO: Add 'My WishList Page' & 'Chats Page'
-  static final List<Widget> _pages = [const HomePage(), const MyCartPage(), const HomePage(), const HomePage(), const ProfilePage()];
+  static final List<Widget> _pages = [const HomePage(), const MyCartPage(orders: [],), const HomePage(), const HomePage(), const ProfilePage()];
 
   @override
   Widget build(BuildContext context) {

@@ -56,7 +56,7 @@ class MyOrders extends StatelessWidget {
 
 class MyOrderCard extends StatelessWidget {
   final Order order;
-  final String title;
+  final String? title;
   const MyOrderCard({super.key, required this.title, required this.order});
 
   @override
@@ -64,39 +64,35 @@ class MyOrderCard extends StatelessWidget {
     return Row(
       children: [
         SizedBox.square(
-          dimension: 90,
-          child: DecoratedBox(
-            decoration: const BoxDecoration(
-                shape: BoxShape.rectangle, color: Color(0xffeee5db), borderRadius: BorderRadius.all(Radius.circular(15))),
-            child: Image.asset(order.product.image),
-          ),
-        ),
-       Expanded(
-       
+            dimension: 90,
+            child: DecoratedBox(
+                decoration: const BoxDecoration(
+                    shape: BoxShape.rectangle, color: Color(0xffeee5db), borderRadius: BorderRadius.all(Radius.circular(15))),
+                child: Image.asset(order.product.image))),
+        Expanded(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(15, 15, 0, 5),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(order.product.title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500)),
-                    Text("Size: ${order.product.size} | Qty :10pcs",
-                        style: const TextStyle(color: Colors.grey, fontWeight: FontWeight.w500)),
-                    Text("\$${order.product.price}", style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
-                  ],
-                ),
-                SizedBox(
-                  width: 95,
-                  height: 40,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 6), backgroundColor: const Color(0xff704f38)),
-                    child: Text(title, style: const TextStyle(color: Colors.white,fontSize: 15)),
-                  ),
-                )
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(order.product.title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w500)),
+                  Text("Size: ${order.product.size} | Qty :10pcs", style: const TextStyle(color: Colors.grey, fontWeight: FontWeight.w500)),
+                  Text("\$${order.product.price}", style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
+                ]),
+
+               Visibility(
+                visible:(title!= "")? true: false ,
+                 child: SizedBox(
+                      width: 95,
+                      height: 40,
+                      child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.symmetric(vertical: 6), backgroundColor: const Color(0xff704f38)),
+                          child: Text(title!, style: const TextStyle(color: Colors.white, fontSize: 15))))
+               )
               ],
             ),
           ),

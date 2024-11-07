@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AppConstants {
   static const double padding = 20;
@@ -44,6 +45,12 @@ class AppConstants {
     (images: "assets/images/g.png", title: "Buy One Get One Free", subTitle: "Discount %50 for the first transaction "),
   ];
 
+  static const ShowModelBottomSheetDetails showModelBottomSheetDetails = [
+    (hintText: "Sub-Total", price: "407.085"),
+    (hintText: "Delivery fee", price: "25.056"),
+    (hintText: "Discount", price: "35")
+  ];
+
   static const CategoryIcons categoryIcons = [
     (image: "assets/images/tt.png", name: "T-Shirt"),
     (image: "assets/images/pant.jpg", name: "Pant"),
@@ -56,13 +63,11 @@ class AppConstants {
     (image: "assets/images/search.png", title: "Google Pay"),
   ];
 
-  static const  CouponesDetails couponDetails = [
-    (header: "Welcom200",content: "Add items worth \$5 more to unlock",discount:"Get 50% off"),
-    (header: "CashBack12",content: "Add items worth \$28 more to unlock",discount:"Get 50% off Combo"),
-    (header: "Welcom200",content: "Add items worth \$20 more to unlock",discount:"Get 50% off"),
-    (header: "FEST2COST",content: "Add items worth \$15 more to unlock",discount:"Up to \$12 cashback"),
-    
-
+  static const CouponsDetails couponDetails = [
+    (header: "Welcome200", content: "Add items worth \$5 more to unlock", discount: "Get 50% off"),
+    (header: "CashBack12", content: "Add items worth \$28 more to unlock", discount: "Get 50% off Combo"),
+    (header: "Welcome200", content: "Add items worth \$20 more to unlock", discount: "Get 50% off"),
+    (header: "FEST2COST", content: "Add items worth \$15 more to unlock", discount: "Up to \$12 cashback"),
   ];
   static const ShippingCategories shippingCategories = [
     (address: "Economy", location: "Estimated arrival time 25 May 2025", icon: Icons.car_rental_rounded),
@@ -71,7 +76,74 @@ class AppConstants {
     (address: "Friend's House ", location: "Estimated arrival time 25 May 2025", icon: Icons.car_rental_rounded),
   ];
 
-  static const List<String> chips = ["All", "Newest", "Popular", "Man", "Woman"];
+  static const List<String> chips = ["All", "Man", "Woman", "Newest", "Popular"];
+
+  static const List<String> privacy = ["All", "Services", "General", "Accounts"];
+
+  static const HelpCenterContent helpCenterContent = [
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Can I track my order's delivery status?"
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Is there a return policy?"
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Can I save my favorite item for late?"
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Can I share the products with my friends?"
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "How do i contact the customer support?"
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Which payment methods are accepted?"
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "How to add a review?"
+    ),
+  ];
+
+  static const ContactUs contactUs = [
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Customer services",
+      icon: FontAwesomeIcons.headphones
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "WhatsApp?",
+      icon: FontAwesomeIcons.whatsapp
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Websites?",
+      icon: FontAwesomeIcons.language
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "FaceBook",
+      icon: FontAwesomeIcons.facebook
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Twitter",
+      icon: FontAwesomeIcons.xTwitter
+    ),
+    (
+      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
+      title: "Instagram",
+      icon: FontAwesomeIcons.instagram
+    ),
+    
+  ];
 
   static final List<({IconData icon, IconData iconFilled})> navigationData = [
     (icon: Icons.home_outlined, iconFilled: Icons.home_filled),
@@ -98,4 +170,7 @@ typedef OnboardingContent = List<({String image, String title, String subtitle})
 typedef CarouselSliderData = List<({String title, String subTitle, String images})>;
 typedef ShippingCategories = List<({String location, String address, IconData icon})>;
 typedef PaymentCategories = List<({String image, String title})>;
-typedef CouponesDetails = List<({String header, String content, String discount})>;
+typedef CouponsDetails = List<({String header, String content, String discount})>;
+typedef ShowModelBottomSheetDetails = List<({String hintText, String price})>;
+typedef HelpCenterContent = List<({String title, String content})>;
+typedef ContactUs = List<({String title, String content, IconData icon})>;

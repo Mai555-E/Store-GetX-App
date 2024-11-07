@@ -12,14 +12,11 @@ class PaymentMethodsScreen extends StatefulWidget {
 
 class _PaymentMethodsState extends State<PaymentMethodsScreen> {
   @override
-  String? radioValue;
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar:
-          AppBar(backgroundColor: Colors.white, title: const Text("Choose Shipping", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500))),
+      appBar: AppBar(
+          backgroundColor: Colors.white, title: const Text("Choose Shipping", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w500))),
       body: Column(
         children: [
           Container(
@@ -28,48 +25,40 @@ class _PaymentMethodsState extends State<PaymentMethodsScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomText(title: "Credit & Debit Card"),
-                // Spacer(),
                 Container(
                   margin: const EdgeInsets.only(top: 10, bottom: 25),
                   width: double.maxFinite,
                   height: 50,
                   decoration: BoxDecoration(
-                      //color: Colors.amber,
-                      borderRadius: const BorderRadius.all(Radius.circular(15)),
-                      border: Border.all(color: const Color(0xffE0E0E0))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      RepeatedAddress(address: "Add Card", icon: Icons.card_travel_rounded, color: Colors.grey[800], iconColor: AppColors.primary),
-                      IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_forward_ios_outlined, color: AppColors.primary))
-                    ],
-                  ),
+                      borderRadius: const BorderRadius.all(Radius.circular(15)), border: Border.all(color: const Color(0xffE0E0E0))),
+                  child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                    const RepeatedAddress(address: "Add Card", icon: Icons.card_travel_rounded, color: Color.fromRGBO(66, 66, 66, 1)),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_forward_ios_outlined, color: AppColors.primary))
+                  ]),
                 ),
-
                 const CustomText(title: "More Payment Option"),
-
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   height: MediaQuery.sizeOf(context).height / 3.7,
-                  decoration:
-                      BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(20)), border: Border.all(color: const Color(0xffE0E0E0))),
+                  decoration: BoxDecoration(
+                      borderRadius: const BorderRadius.all(Radius.circular(20)), border: Border.all(color: const Color(0xffE0E0E0))),
                   child: Column(
                     children: [
                       Expanded(
-                        child: ListView.separated(
-                          itemCount: 3,
-                          separatorBuilder: (_, __) => const Divider(),
-                          itemBuilder: (BuildContext context, index) =>
-                              CustomRadioButton(title: AppConstants.paymentOption[index].title, imageValue: AppConstants.paymentOption[index].image),
-                        ),
-                      )
+                          child: ListView.separated(
+                              itemCount: 3,
+                              separatorBuilder: (_, __) => const Divider(),
+                              itemBuilder: (BuildContext context, index) => CustomRadioButton(
+                                  title: AppConstants.paymentOption[index].title, imageValue: AppConstants.paymentOption[index].image)))
                     ],
                   ),
                 )
               ],
             ),
           ),
-          Expanded(child: Align(alignment: Alignment.bottomCenter, child: ElevatedButton(onPressed: () {}, child: const Text("Confirm Payment"))))
+          Expanded(
+              child:
+                  Align(alignment: Alignment.bottomCenter, child: ElevatedButton(onPressed: () {}, child: const Text("Confirm Payment"))))
         ],
       ),
     );
@@ -88,7 +77,7 @@ class PaymentIcon extends StatelessWidget {
       children: [
         Image.asset(image, width: 30, height: 35),
         const SizedBox(width: 8),
-        Text(payTitle, style: TextStyle(color: Colors.grey[600], fontSize: 18)),
+        Text(payTitle, style: TextStyle(color: Colors.grey[600], fontSize: 18))
       ],
     );
   }
@@ -105,13 +94,11 @@ class CustomText extends StatelessWidget {
 }
 
 class CustomRadioButton extends StatelessWidget {
-  CustomRadioButton({super.key, required this.imageValue, required this.title});
+  const CustomRadioButton({super.key, required this.imageValue, required this.title});
 
   final String imageValue;
   final String title;
-  @override
-  String? radioValue;
-
+  static String? radioValue;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -123,10 +110,6 @@ class CustomRadioButton extends StatelessWidget {
           groupValue: radioValue,
           onChanged: (val) {
             radioValue = val;
-            // setState(() {
-            //   radioValue = val;
-
-            // });
           },
         )
       ],

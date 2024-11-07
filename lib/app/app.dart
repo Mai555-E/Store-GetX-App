@@ -14,7 +14,7 @@ class ECommerceApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //
       getPages: RouteGenerator.getRoute(),
-      initialRoute: NamedRoutes.receiptScreen,
+      initialRoute: NamedRoutes.myCartPage,
 
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
@@ -26,3 +26,5 @@ class ECommerceApp extends StatelessWidget {
     );
   }
 }
+
+

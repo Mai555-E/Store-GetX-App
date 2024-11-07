@@ -17,8 +17,8 @@ class VisaCardScreen extends StatelessWidget {
             children: [
               const VisaCard(),
               const CardTextFormField(),
-              ElevatedButton(onPressed: () {}, child: const Text("Add Card")),
-            ],
+              ElevatedButton(onPressed: () {}, child: const Text("Add Card"))
+            ]
           ),
         ),
       ),
@@ -47,10 +47,10 @@ class CardTextFormField extends StatelessWidget {
             children: [
               Flexible(flex: 3, child: TextFormField(decoration: const InputDecoration(label: Text("Expiry Date")))),
               const SizedBox(width: 25),
-              Flexible(flex: 3, child: TextFormField(decoration: const InputDecoration(label: Text("CVV")))),
+              Flexible(flex: 3, child: TextFormField(decoration: const InputDecoration(label: Text("CVV"))))
             ],
           ),
-          const CheckedButton(),
+          const CheckedButton()
         ],
       ),
     );
@@ -82,13 +82,13 @@ class VisaCard extends StatelessWidget {
               Text("Card holder name", style: TextStyle(color: Color(0xffd7ccc4), fontSize: 15)),
               Text("Expiry date", style: TextStyle(color: Color(0xffd7ccc4), fontSize: 15)),
               Align(alignment: Alignment.centerRight, child: Icon(Icons.sd_card, size: 40, color: Colors.white))
-            ],
+            ]
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text("Mai Emad", style: TextStyle(color: Color(0xffd7ccc4), fontSize: 15)),
-              Text("02\\30", style: TextStyle(color: Color(0xffd7ccc4), fontSize: 15)),
+              Text("02\\30", style: TextStyle(color: Color(0xffd7ccc4), fontSize: 15))
             ],
           ),
         ],
