@@ -78,6 +78,12 @@ class AppConstants {
 
   static const List<String> chips = ["All", "Man", "Woman", "Newest", "Popular"];
 
+  static const List<String> brands = ['All', 'Nike', 'Adidas', 'Puma', 'Yousef'];
+
+  static const List<String> gender = ['All', 'Men', 'Woman'];
+
+  static const List<String> sortBy = ['Most Recent', 'Popular', 'Price High', 'Price Low'];
+
   static const List<String> privacy = ["All", "Services", "General", "Accounts"];
 
   static const HelpCenterContent helpCenterContent = [

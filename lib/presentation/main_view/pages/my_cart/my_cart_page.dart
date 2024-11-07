@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:store_getx_app/presentation/resources/app_constants.dart';
-import 'package:store_getx_app/presentation/resources/routes.dart';
+import '../../../resources/app_constants.dart';
+import '../../../resources/routes.dart';
 
 import '../../../../domain/order.dart';
 import '../../../../domain/product.dart';
@@ -9,7 +9,7 @@ import '../widgets/order_card.dart';
 
 class MyCartPage extends StatelessWidget {
   final List<Order> orders;
-  const MyCartPage({super.key, required this.orders}); // ,
+  const MyCartPage({super.key, required this.orders});
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +26,10 @@ class MyCartPage extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                     separatorBuilder: (_, __) => const Column(children: [SizedBox(height: 10), Divider(), SizedBox(height: 10)]),
                     itemBuilder: (_, index) => OrderCard(
-                        
                         order: Order(
                             quantity: 1,
                             product: Product(
-                                id: index+1,
+                                id: index + 1,
                                 price: 83.97,
                                 description: "",
                                 size: "Size : XL",
@@ -64,8 +63,7 @@ class ShowModelBottomSheet extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   separatorBuilder: (_, __) => const SizedBox(height: 8),
                   itemBuilder: (_, index) => Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                        Text(AppConstants.showModelBottomSheetDetails[index].hintText,
-                            style: TextStyle(color: Colors.grey[600], fontSize: 16)),
+                        Text(AppConstants.showModelBottomSheetDetails[index].hintText, style: TextStyle(color: Colors.grey[600], fontSize: 16)),
                         Text("\$${AppConstants.showModelBottomSheetDetails[index].price}", style: const TextStyle(color: Colors.black))
                       ])),
             ),
@@ -79,8 +77,7 @@ class ShowModelBottomSheet extends StatelessWidget {
             Expanded(
               child: Align(
                   alignment: Alignment.bottomCenter,
-                  child:
-                      ElevatedButton(onPressed: () => Get.toNamed(NamedRoutes.checkoutScreen), child: const Text('Proceed to checkout'))),
+                  child: ElevatedButton(onPressed: () => Get.toNamed(NamedRoutes.checkoutScreen), child: const Text('Proceed to checkout'))),
             ),
           ],
         ),

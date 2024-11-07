@@ -14,7 +14,7 @@ class ECommerceApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //
       getPages: RouteGenerator.getRoute(),
-      initialRoute: NamedRoutes.myCartPage,
+      initialRoute: NamedRoutes.filterScreen,
 
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,

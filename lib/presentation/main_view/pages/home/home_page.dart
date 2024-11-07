@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import '../../../resources/app_assets.dart';
 
+import '../../../resources/app_assets.dart';
 import '../../../resources/app_colors.dart';
 import '../../../resources/app_constants.dart';
 import '../widgets/shareable_widget_main_view.dart';
@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
             _buildCategoriesList(),
 
             // Types Chips
-            const TypesChips(),
+            const TypesChips(chips: AppConstants.chips),
 
             // Products
             _buildProductsCards()
@@ -46,8 +46,6 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-
-  
 
   Row _buildLocationAndNotification() {
     return Row(
@@ -88,9 +86,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-
-
-
   Row _buildSearchAndFilter() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -120,10 +115,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-
-
-  
-
   SizedBox _buildCarouselSliderWithDots() {
     return SizedBox.fromSize(
       size: const Size.fromHeight(210), // CarouselSlider with Dots
@@ -151,11 +142,9 @@ class HomePage extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 // Title
-                                Text(AppConstants.carouselSliderData[index].title,
-                                    style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
+                                Text(AppConstants.carouselSliderData[index].title, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
                                 // SubTitle
-                                Text(AppConstants.carouselSliderData[index].subTitle,
-                                    style: TextStyle(fontSize: 15, color: Colors.grey[700])),
+                                Text(AppConstants.carouselSliderData[index].subTitle, style: TextStyle(fontSize: 15, color: Colors.grey[700])),
                                 // Button
                                 SizedBox.fromSize(
                                   size: const Size(110, 30),
@@ -178,11 +167,7 @@ class HomePage extends StatelessWidget {
               );
             },
             options: CarouselOptions(
-                height: 190,
-                autoPlay: true,
-                viewportFraction: 1,
-                enableInfiniteScroll: true,
-                autoPlayCurve: Curves.easeInOutCubicEmphasized),
+                height: 190, autoPlay: true, viewportFraction: 1, enableInfiniteScroll: true, autoPlayCurve: Curves.easeInOutCubicEmphasized),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -249,8 +234,8 @@ class HomePage extends StatelessWidget {
         itemCount: 4,
         physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: .86, mainAxisSpacing: 10, crossAxisSpacing: 15),
+        gridDelegate:
+            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: .86, mainAxisSpacing: 10, crossAxisSpacing: 15),
         itemBuilder: (_, __) => Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

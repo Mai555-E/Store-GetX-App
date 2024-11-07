@@ -1,26 +1,26 @@
 import 'package:get/get.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/filter_screen.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/help_center_screen.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/notification_screen.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/track_order_screen.dart';
 
 import '../auth/forget_password_screen.dart';
 import '../auth/sign_in_screen.dart';
 import '../auth/sign_up_screen.dart';
 import '../auth/verify_code_screen.dart';
 import '../main_view/main_view.dart';
+import '../main_view/pages/home/filter_screen.dart';
 import '../main_view/pages/home/location.dart';
 import '../main_view/pages/home/product_details.dart';
 import '../main_view/pages/my_cart/checkout_screen.dart';
 import '../main_view/pages/my_cart/choose_shipping_screen.dart';
 import '../main_view/pages/my_cart/coupon_screen.dart';
 import '../main_view/pages/my_cart/e_receipt_screen.dart';
+import '../main_view/pages/my_cart/help_center_screen.dart';
 import '../main_view/pages/my_cart/leave_review_screen.dart';
 import '../main_view/pages/my_cart/my_cart_page.dart';
 import '../main_view/pages/my_cart/my_orders.dart';
+import '../main_view/pages/my_cart/notification_screen.dart';
 import '../main_view/pages/my_cart/payment_methods_screen.dart';
 import '../main_view/pages/my_cart/payment_screen.dart';
 import '../main_view/pages/my_cart/shopping_address_screen.dart';
+import '../main_view/pages/my_cart/track_order_screen.dart';
 import '../main_view/pages/my_cart/visa_card_screen.dart';
 import '../main_view/pages/profile/profile_page.dart';
 import '../main_view/pages/profile/settings/password_manager_screen.dart';
@@ -46,12 +46,12 @@ class NamedRoutes {
   static const String mainView = "/mainView";
   static const String location = "/location";
   static const String bodyDetails = "/bodyDetails";
+  static const String filterScreen = "/filterScreen";
   static const String productDetails = "/productDetails";
 
   // MyCart Page
   static const String myOrders = "/myOrders";
   static const String myCartPage = "/myCartPage";
-  static const String filterScreen = "/filterScreen";
   static const String couponScreen = "/couponScreen";
   static const String receiptScreen = "/receiptScreen";
   static const String paymentScreen = "/paymentScreen";
