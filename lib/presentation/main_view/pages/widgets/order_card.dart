@@ -4,7 +4,7 @@ import '../../../../domain/order.dart';
 
 class OrderCard extends StatelessWidget {
   final Order order;
-  
+
   const OrderCard({super.key, required this.order});
 
   @override
@@ -14,8 +14,7 @@ class OrderCard extends StatelessWidget {
         SizedBox.square(
           dimension: 90,
           child: DecoratedBox(
-            decoration: const BoxDecoration(
-                shape: BoxShape.rectangle, color: Color(0xffeee5db), borderRadius: BorderRadius.all(Radius.circular(15))),
+            decoration: const BoxDecoration(shape: BoxShape.rectangle, color: Color(0xffeee5db), borderRadius: BorderRadius.all(Radius.circular(15))),
             child: Image.asset(order.product.image),
           ),
         ),
@@ -34,20 +33,15 @@ class OrderCard extends StatelessWidget {
                     Text("\$${order.product.price}", style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
                   ],
                 ),
-                
-                   Row(
+                Row(
                   children: [
-                    
-                     _buildCounterCartButton(isRemoveIcon: true),
+                    _buildCounterCartButton(isRemoveIcon: true),
                     const SizedBox(width: 5),
                     Text(order.quantity.toString(), style: const TextStyle(fontSize: 17)),
                     const SizedBox(width: 5),
                     _buildCounterCartButton(isRemoveIcon: false)
-
                   ],
                 ),
-                
-                
               ],
             ),
           ),

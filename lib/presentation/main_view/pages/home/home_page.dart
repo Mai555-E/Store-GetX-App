@@ -245,7 +245,7 @@ class HomePage extends StatelessWidget {
               width: 180,
               height: 147,
               decoration: const BoxDecoration(color: AppColors.primary, borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: Image.asset(AppAssets.jacket, fit: BoxFit.fitHeight),
+              child: Image.asset(AppAssets.womanModelImage, fit: BoxFit.fitHeight),
             ),
 
             // Product Name & Score

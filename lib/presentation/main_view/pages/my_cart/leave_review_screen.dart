@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:store_getx_app/presentation/widgets/leading_app_bar.dart';
 
 import '../../../../domain/order.dart';
 import '../../../../domain/product.dart';
 import '../../../resources/app_assets.dart';
 import '../../../resources/app_colors.dart';
+import '../../../widgets/leading_app_bar.dart';
 import 'my_orders.dart';
 
 class LeaveReviewScreen extends StatelessWidget {
@@ -27,11 +27,10 @@ class LeaveReviewScreen extends StatelessWidget {
                     MyOrderCard(
                         title: "Re-Order",
                         order: Order(
-                            product: Product(
-                                id: 2, size: "XL", price: 56.879, title: "Brown jacket", image: AppAssets.girlJacket, description: ""))),
+                            product:
+                                Product(id: 2, size: "XL", price: 56.879, title: "Brown jacket", image: AppAssets.girlJacketImage, description: ""))),
                     Divider(color: Colors.grey[300]),
-                    const SizedBox(
-                        height: 55, child: Text("How is your order?", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600))),
+                    const SizedBox(height: 55, child: Text("How is your order?", style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600))),
                     Divider(color: Colors.grey[300]),
                     const Padding(padding: EdgeInsets.symmetric(vertical: 10), child: Text("Your overall rating")),
                     const Padding(padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10), child: CustomRatingBar()),
@@ -43,8 +42,8 @@ class LeaveReviewScreen extends StatelessWidget {
                         height: 140,
                         margin: const EdgeInsets.symmetric(vertical: 10),
                         width: double.maxFinite,
-                        decoration: BoxDecoration(
-                            border: Border.all(color: AppColors.secondary), borderRadius: const BorderRadius.all(Radius.circular(20))),
+                        decoration:
+                            BoxDecoration(border: Border.all(color: AppColors.secondary), borderRadius: const BorderRadius.all(Radius.circular(20))),
                         child: TextFormField(
                             enabled: false,
                             keyboardAppearance: Brightness.light,

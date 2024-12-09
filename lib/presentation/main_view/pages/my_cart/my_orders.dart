@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:store_getx_app/domain/product.dart';
-import 'package:store_getx_app/presentation/resources/app_assets.dart';
+
 import '../../../../domain/order.dart';
+import '../../../../domain/product.dart';
+import '../../../resources/app_assets.dart';
 
 class MyOrders extends StatelessWidget {
   const MyOrders({super.key});
@@ -27,8 +28,7 @@ class MyOrders extends StatelessWidget {
                 MyOrderCard(
                     title: 'Track Order',
                     order: Order(
-                        product:
-                            Product(id: 5, size: "XL", price: 83.97, title: "Brown jacket", image: AppAssets.girlJacket, description: "")))
+                        product: Product(id: 5, size: "XL", price: 83.97, title: "Brown jacket", image: AppAssets.girlJacketImage, description: "")))
               ])),
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 10),
@@ -36,17 +36,15 @@ class MyOrders extends StatelessWidget {
                 MyOrderCard(
                     title: 'Leave-Review',
                     order: Order(
-                        product:
-                            Product(id: 4, size: "XL", price: 83.97, title: "Brown jacket", image: AppAssets.girlJacket, description: "")))
+                        product: Product(id: 4, size: "XL", price: 83.97, title: "Brown jacket", image: AppAssets.girlJacketImage, description: "")))
               ])),
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Column(children: [
                 MyOrderCard(
                     title: 'Re-Order',
-                    order: Order(
-                        product:
-                            Product(id: 3, size: "XL", price: 83.97, title: "Brown jacket", image: AppAssets.girlJacket, description: "")))
+                    order:
+                        Order(product: Product(id: 3, size: "XL", price: 83.97, title: "Brown jacket", image: AppAssets.girlJacketImage, description: "")))
               ])),
         ]),
       ),
@@ -66,8 +64,8 @@ class MyOrderCard extends StatelessWidget {
         SizedBox.square(
             dimension: 90,
             child: DecoratedBox(
-                decoration: const BoxDecoration(
-                    shape: BoxShape.rectangle, color: Color(0xffeee5db), borderRadius: BorderRadius.all(Radius.circular(15))),
+                decoration:
+                    const BoxDecoration(shape: BoxShape.rectangle, color: Color(0xffeee5db), borderRadius: BorderRadius.all(Radius.circular(15))),
                 child: Image.asset(order.product.image))),
         Expanded(
           child: Padding(
@@ -81,18 +79,16 @@ class MyOrderCard extends StatelessWidget {
                   Text("Size: ${order.product.size} | Qty :10pcs", style: const TextStyle(color: Colors.grey, fontWeight: FontWeight.w500)),
                   Text("\$${order.product.price}", style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500))
                 ]),
-
-               Visibility(
-                visible:(title!= "")? true: false ,
-                 child: SizedBox(
-                      width: 95,
-                      height: 40,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 6), backgroundColor: const Color(0xff704f38)),
-                          child: Text(title!, style: const TextStyle(color: Colors.white, fontSize: 15))))
-               )
+                Visibility(
+                    visible: (title != "") ? true : false,
+                    child: SizedBox(
+                        width: 95,
+                        height: 40,
+                        child: ElevatedButton(
+                            onPressed: () {},
+                            style:
+                                ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 6), backgroundColor: const Color(0xff704f38)),
+                            child: Text(title!, style: const TextStyle(color: Colors.white, fontSize: 15)))))
               ],
             ),
           ),

@@ -51,7 +51,7 @@ class SocialIcons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton.outlined(onPressed: () {}, icon: const Icon(Icons.apple_rounded, color: Colors.black)),
-          IconButton.outlined(onPressed: () {}, icon: Image.asset(AppAssets.googleIcon, width: 35)),
+          IconButton.outlined(onPressed: () {}, icon: Image.asset(AppAssets.googleLogo, width: 35)),
           IconButton.outlined(onPressed: () {}, icon: const Icon(Icons.facebook, color: Colors.blue)),
         ],
       ),

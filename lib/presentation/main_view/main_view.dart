@@ -33,8 +33,8 @@ class _MainViewState extends State<MainView> {
     return Container(
       height: 60,
       width: double.maxFinite,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(4),
+      margin: const EdgeInsets.symmetric(horizontal: 20),
       decoration: const BoxDecoration(color: Colors.black, borderRadius: BorderRadius.all(Radius.circular(30))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

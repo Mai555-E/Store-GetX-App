@@ -39,7 +39,7 @@ class ProductDetails extends StatelessWidget {
                     ],
                   ),
                   const Spacer(),
-                  SizedBox(height: 190, child: Image.asset(AppAssets.girlJacket, width: 135, fit: BoxFit.fill))
+                  SizedBox(height: 190, child: Image.asset(AppAssets.girlJacketImage, width: 135, fit: BoxFit.fill))
                 ],
               ),
             ),
@@ -108,8 +108,7 @@ class ProductDetails extends StatelessWidget {
                 const Spacer(),
                 Expanded(
                   flex: 4,
-                  child:
-                      ElevatedButton.icon(onPressed: () {}, label: const Text("Add to cart"), icon: const Icon(Icons.shopping_bag_rounded)),
+                  child: ElevatedButton.icon(onPressed: () {}, label: const Text("Add to cart"), icon: const Icon(Icons.shopping_bag_rounded)),
                 ),
                 const Spacer(),
               ],

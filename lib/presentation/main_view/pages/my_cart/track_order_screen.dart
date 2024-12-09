@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:store_getx_app/domain/order.dart';
-import 'package:store_getx_app/domain/product.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/e_receipt_screen.dart';
-import 'package:store_getx_app/presentation/main_view/pages/my_cart/my_orders.dart';
-import 'package:store_getx_app/presentation/resources/app_colors.dart';
-import 'package:store_getx_app/presentation/widgets/leading_app_bar.dart';
 
+import '../../../../domain/order.dart';
+import '../../../../domain/product.dart';
 import '../../../resources/app_assets.dart';
+import '../../../resources/app_colors.dart';
+import '../../../widgets/leading_app_bar.dart';
+import 'e_receipt_screen.dart';
+import 'my_orders.dart';
 
 class TrackOrderScreen extends StatelessWidget {
   const TrackOrderScreen({super.key});
@@ -27,8 +27,7 @@ class TrackOrderScreen extends StatelessWidget {
             MyOrderCard(
                 title: "",
                 order: Order(
-                    product:
-                        Product(id: 2, size: "XL", price: 56.879, title: "Brown jacket", image: AppAssets.girlJacket, description: ""))),
+                    product: Product(id: 2, size: "XL", price: 56.879, title: "Brown jacket", image: AppAssets.girlJacketImage, description: ""))),
             Divider(color: Colors.grey[300]),
             Container(
                 height: MediaQuery.sizeOf(context).height / 6.9,
@@ -77,8 +76,7 @@ class _CustomStepperState extends State<CustomStepper> {
                 "${DateFormat("dd MMMM yyyy").format(DateTime.now())}, ${DateFormat.jm().format(DateTime.now())}", 0),
             _buildStep(Icons.view_in_ar, "In Progress", currentIndex,
                 "${DateFormat("dd MMMM yyyy").format(DateTime.now())}, ${DateFormat.jm().format(DateTime.now())}", 1),
-            _buildStep(
-                Icons.local_shipping_outlined, "Shipped", currentIndex, "Expected ${DateFormat("dd MMMM yyyy").format(DateTime.now())}", 2),
+            _buildStep(Icons.local_shipping_outlined, "Shipped", currentIndex, "Expected ${DateFormat("dd MMMM yyyy").format(DateTime.now())}", 2),
             _buildStep(Icons.view_in_ar, "Delivered", currentIndex, DateFormat("dd MMMM yyyy").format(DateTime.now()), 3)
           ]),
     );
@@ -87,7 +85,7 @@ class _CustomStepperState extends State<CustomStepper> {
 
 Step _buildStep(IconData icon, String stepTitle, int index, String subTitle, int stateIndex) {
   return Step(
-      stepStyle:  StepStyle(color:(index >= stateIndex) ?  AppColors.primary: AppColors.grey, connectorColor: AppColors.primary),
+      stepStyle: StepStyle(color: (index >= stateIndex) ? AppColors.primary : AppColors.grey, connectorColor: AppColors.primary),
       isActive: index >= 0,
       state: (index >= stateIndex) ? StepState.complete : StepState.disabled,
       content: const SizedBox(),
@@ -97,5 +95,3 @@ Step _buildStep(IconData icon, String stepTitle, int index, String subTitle, int
         children: [Text(subTitle, style: const TextStyle(color: AppColors.secondary)), Icon(icon, color: AppColors.primary, size: 30)],
       ));
 }
-
-

@@ -1,15 +1,15 @@
 class AppAssets {
   AppAssets._();
 
-  static const String personIcon = "assets/images/person2.png";
-  static const String googleIcon = "assets/images/google_icon.png";
-  static const String girlJacket = "assets/images/girl_jacket.png";
-  static const String upImage = "assets/images/up.jpg";
-  static const String fashionImage = "assets/images/f.jpg";
-  static const String halfCircleImage = "assets/images/line.jpg";
-  static const String google = "assets/images/search.png";
-  static const String payPal = "assets/images/paypal.png";
-  static const String apply = "assets/images/social-media.png";
-  static const String jacket = "assets/images/g.png";
-  static const String visaCard = "assets/images/visa_card.png";
+  // Payment Icons
+  static const String paypalIcon = "assets/images/paypal.png";
+  static const String visaCardIcon = "assets/images/visa_card.png";
+
+  // Images
+  static const String appLogo = "assets/images/app_logo.jpg";
+  static const String googleLogo = "assets/images/google_logo.png";
+  static const String womanModelImage = "assets/images/woman_model.png";
+  static const String girlJacketImage = "assets/images/girl_jacket.png";
+  static const String splashLowerCircleImage = "assets/images/splash_lower_circle.jpg";
+  static const String splashUpperCircleImage = "assets/images/splash_upper_circle.jpg";
 }

@@ -24,7 +24,7 @@ class ReceiptScreen extends StatelessWidget {
           CustomReceiptOrderCard(
               order: Order(
                   product: Product(
-                      id: 5, size: "XL | Qty : 10pcs", price: 120, title: "brown Jacket", image: AppAssets.girlJacket, description: ""))),
+                      id: 5, size: "XL | Qty : 10pcs", price: 120, title: "brown Jacket", image: AppAssets.girlJacketImage, description: ""))),
           Divider(color: Colors.grey[300]),
           SizedBox(
               height: MediaQuery.sizeOf(context).height / 4.3,
@@ -80,8 +80,8 @@ class CustomReceiptOrderCard extends StatelessWidget {
       SizedBox.square(
           dimension: 90,
           child: DecoratedBox(
-              decoration: const BoxDecoration(
-                  shape: BoxShape.rectangle, color: Color(0xffeee5db), borderRadius: BorderRadius.all(Radius.circular(15))),
+              decoration:
+                  const BoxDecoration(shape: BoxShape.rectangle, color: Color(0xffeee5db), borderRadius: BorderRadius.all(Radius.circular(15))),
               child: Image.asset(order.product.image))),
       Expanded(
           child: Padding(

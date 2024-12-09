@@ -65,7 +65,7 @@ class NamedRoutes {
   static const String shoppingAddress = "/shoppingAddress";
   static const String leaveReviewScreen = "/leaveReviewScreen";
   static const String helpCenterScreen = "/helpCenterScreen";
-  
+
   // Profile Page
   static const String profilePage = "/profilePage";
   static const String settingsScreen = "/settingsScreen";
@@ -99,13 +99,13 @@ class RouteGenerator {
       GetPage(name: NamedRoutes.visaCardScreen, page: () => const VisaCardScreen()),
       GetPage(name: NamedRoutes.leaveReviewScreen, page: () => const LeaveReviewScreen()),
       GetPage(name: NamedRoutes.helpCenterScreen, page: () => const HelpCenterScreen()),
-       
+
       GetPage(name: NamedRoutes.filterScreen, page: () => const FilterScreen()),
       GetPage(name: NamedRoutes.receiptScreen, page: () => const ReceiptScreen()),
       GetPage(name: NamedRoutes.trackOrderScreen, page: () => const TrackOrderScreen()),
       GetPage(name: NamedRoutes.checkoutScreen, page: () => const CheckoutScreen(orders: [])),
       GetPage(name: NamedRoutes.notificationScreen, page: () => const NotificationScreen()),
-       
+
       GetPage(name: NamedRoutes.shippingScreen, page: () => const ChooseShippingScreen()),
       GetPage(name: NamedRoutes.paymentMethods, page: () => const PaymentMethodsScreen()),
       GetPage(name: NamedRoutes.shoppingAddress, page: () => const ShoppingAddressScreen()),
