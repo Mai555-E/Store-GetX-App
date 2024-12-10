@@ -36,6 +36,8 @@ flutter:
   assets:
     - assets/lang/
     - assets/images/
+    - assets/icons/payment/
+    - assets/icons/categories/
 
   fonts:
     - family: Inter

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'app_assets.dart';
+
 class AppConstants {
   static const double padding = 20;
 
@@ -37,12 +39,12 @@ class AppConstants {
     'South Sinai'
   ].map((location) => "$location, Egypt").toList();
 
-  static const CarouselSliderData carouselSliderData = [
-    (images: "assets/images/g.png", title: "New Collection", subTitle: "Discount %50 for the first transaction "),
-    (images: "assets/images/g.png", title: "New Arrivals", subTitle: "Discount %40 for the second transaction "),
-    (images: "assets/images/g.png", title: "New Arrivals", subTitle: "Discount %50 for the first transaction "),
-    (images: "assets/images/g.png", title: "New Collection", subTitle: "50% OFF on Summer Collection!"),
-    (images: "assets/images/g.png", title: "Buy One Get One Free", subTitle: "Discount %50 for the first transaction "),
+  static const List<CarouselData> carouselSliderData = [
+    (images: AppAssets.womanModelImage, title: "New Collection", subTitle: "50% OFF on Summer Collection!"),
+    (images: AppAssets.womanModelImage, title: "New Arrivals", subTitle: "Discount %50 for the first transaction "),
+    (images: AppAssets.womanModelImage, title: "New Arrivals", subTitle: "Discount %40 for the second transaction "),
+    (images: AppAssets.womanModelImage, title: "New Collection", subTitle: "Discount %50 for the first transaction "),
+    (images: AppAssets.womanModelImage, title: "Buy One Get One Free", subTitle: "Discount %50 for the first transaction "),
   ];
 
   static const ShowModelBottomSheetDetails showModelBottomSheetDetails = [
@@ -52,10 +54,10 @@ class AppConstants {
   ];
 
   static const CategoryIcons categoryIcons = [
-    (image: "assets/images/tt.png", name: "T-Shirt"),
-    (image: "assets/images/pant.jpg", name: "Pant"),
-    (image: "assets/images/dress.jpg", name: "Dress"),
-    (image: "assets/images/jacket.jpg", name: "Jacket"),
+    (image: AppAssets.shirtIcon, name: "T-Shirt"),
+    (image: AppAssets.pantIcon, name: "Pant"),
+    (image: AppAssets.dressIcon, name: "Dress"),
+    (image: AppAssets.jacketIcon, name: "Jacket"),
   ];
   static const PaymentCategories paymentOption = [
     (image: "assets/images/paypal.png", title: "PayPal"),
@@ -91,10 +93,7 @@ class AppConstants {
       content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
       title: "Can I track my order's delivery status?"
     ),
-    (
-      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
-      title: "Is there a return policy?"
-    ),
+    (content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ", title: "Is there a return policy?"),
     (
       content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
       title: "Can I save my favorite item for late?"
@@ -111,10 +110,7 @@ class AppConstants {
       content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
       title: "Which payment methods are accepted?"
     ),
-    (
-      content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ",
-      title: "How to add a review?"
-    ),
+    (content: "Ensuring that customers can make purchases without their identities being publicly disclosed. ", title: "How to add a review?"),
   ];
 
   static const ContactUs contactUs = [
@@ -148,7 +144,6 @@ class AppConstants {
       title: "Instagram",
       icon: FontAwesomeIcons.instagram
     ),
-    
   ];
 
   static final List<({IconData icon, IconData iconFilled})> navigationData = [
@@ -172,11 +167,11 @@ class AppConstants {
 }
 
 typedef CategoryIcons = List<({String image, String name})>;
-typedef OnboardingContent = List<({String image, String title, String subtitle})>;
-typedef CarouselSliderData = List<({String title, String subTitle, String images})>;
-typedef ShippingCategories = List<({String location, String address, IconData icon})>;
 typedef PaymentCategories = List<({String image, String title})>;
-typedef CouponsDetails = List<({String header, String content, String discount})>;
-typedef ShowModelBottomSheetDetails = List<({String hintText, String price})>;
 typedef HelpCenterContent = List<({String title, String content})>;
 typedef ContactUs = List<({String title, String content, IconData icon})>;
+typedef ShowModelBottomSheetDetails = List<({String hintText, String price})>;
+typedef CouponsDetails = List<({String header, String content, String discount})>;
+typedef OnboardingContent = List<({String image, String title, String subtitle})>;
+typedef CarouselData = ({String title, String subTitle, String images});
+typedef ShippingCategories = List<({String location, String address, IconData icon})>;

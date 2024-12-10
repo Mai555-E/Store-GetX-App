@@ -13,12 +13,12 @@ class ECommerceApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       //
-      getPages: RouteGenerator.getRoute(),
-      initialRoute: NamedRoutes.splashScreen,
-
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: AppTheme.currentMode,
+
+      getPages: RouteGenerator.getRoute(),
+      initialRoute: NamedRoutes.mainView,
 
       locale: context.locale,
       supportedLocales: context.supportedLocales,
@@ -26,5 +26,3 @@ class ECommerceApp extends StatelessWidget {
     );
   }
 }
-
-

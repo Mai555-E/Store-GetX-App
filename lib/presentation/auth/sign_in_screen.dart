@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../resources/app_constants.dart';
 import '../resources/routes.dart';
 import '../widgets.dart';
 import 'auth_widgets.dart';
@@ -14,45 +15,38 @@ class SignInScreen extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding),
             child: Column(
               children: [
-                // Title & Subtitle
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 80),
-                  child: TitleAndSubtitle(title: "signIn", subTitle: "Hi! Welcome back, you've been missed"),
-                ),
-
-                // Email & Password
+                const TitleAndSubtitle(title: "signIn", subTitle: "Hi! Welcome back, you've been missed"),
+                const SizedBox(height: 80),
                 const CustomTextFormField(label: "Email", icon: Icons.email_sharp, hint: 'example@gmail.com'),
                 const SizedBox(height: 30),
-                const CustomTextFormField(label: "Password", icon: Icons.visibility_off, hint: '***************'),
-
-                // Forgot Password
-                Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(onPressed: () => Get.toNamed(NamedRoutes.forgotPasswordScreen), child: const Text("Forgot Password?"))),
+                const CustomTextFormField(label: "Password", icon: Icons.visibility_off, hint: '*******************'),
+                _buildForgetPassword(),
                 const SizedBox(height: 15),
-
-                // Sign In Button
-                ElevatedButton(onPressed: () {}, child: const Text("Sign In")),
+                ElevatedButton(onPressed: () => Get.offNamed(NamedRoutes.mainView), child: const Text("Sign In")),
                 const SizedBox(height: 50),
-
-                // Or sign in with
                 const OrSignWith(label: "in"),
                 const SizedBox(height: 30),
-
-                // Social Icons
                 const SocialIcons(),
-
                 const SizedBox(height: 20),
-
-                // Don't have an account
                 const HaveAnAccount(isSignIn: true)
               ],
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Align _buildForgetPassword() {
+    return Align(
+      alignment: Alignment.centerRight,
+      child: TextButton(
+        onPressed: () => Get.toNamed(NamedRoutes.forgotPasswordScreen),
+        style: const ButtonStyle(textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 16, fontWeight: FontWeight.w500))),
+        child: const Text("Forgot Password"),
       ),
     );
   }

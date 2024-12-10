@@ -3,7 +3,6 @@ import '../../../resources/app_assets.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key});
-
   static const List<String> sizeSelection = ["S", "M", "L", "XL", "XXL", "XXXL"];
 
   @override

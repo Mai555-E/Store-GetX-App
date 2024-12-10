@@ -4,20 +4,20 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import '../resources/app_assets.dart';
+import '../resources/app_constants.dart';
 import '../resources/routes.dart';
 
 class TitleAndSubtitle extends StatelessWidget {
-  final String title;
-  final String subTitle;
+  final String title, subTitle;
   const TitleAndSubtitle({super.key, required this.title, required this.subTitle});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(StringTranslateExtension(title).tr(), style: const TextStyle(fontSize: 35, fontWeight: FontWeight.w500)),
+        Text(StringTranslateExtension(title).tr(), style: Theme.of(context).textTheme.headlineLarge),
         const SizedBox(height: 10),
-        Text(subTitle, textAlign: TextAlign.center, style: const TextStyle(color: Colors.grey)),
+        Text(subTitle, textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyMedium),
       ],
     );
   }
@@ -30,10 +30,13 @@ class OrSignWith extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50),
+      padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding * 2.5),
       child: Row(children: [
         const Expanded(child: Divider()),
-        Padding(padding: const EdgeInsets.symmetric(horizontal: 10), child: Text("Or sign $label with")),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding / 2),
+          child: Text("Or sign $label with", style: Theme.of(context).textTheme.bodyMedium),
+        ),
         const Expanded(child: Divider())
       ]),
     );
@@ -46,7 +49,7 @@ class SocialIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 70),
+      padding: const EdgeInsets.symmetric(horizontal: AppConstants.padding * 3.5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -70,8 +73,9 @@ class HaveAnAccount extends StatelessWidget {
       children: [
         Text("${isSignIn ? "Don't" : "Already"} have an account?"),
         TextButton(
-          child: Text(isSignIn ? "Sign Up" : "Sign In"),
           onPressed: () => Get.offNamed(isSignIn ? NamedRoutes.signUpScreen : NamedRoutes.signInScreen),
+          style: const ButtonStyle(textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 14, fontWeight: FontWeight.w400))),
+          child: Text(isSignIn ? "Sign Up" : "Sign In"),
         ),
       ],
     );

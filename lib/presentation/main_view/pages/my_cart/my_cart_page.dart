@@ -9,7 +9,7 @@ import '../widgets/order_card.dart';
 
 class MyCartPage extends StatelessWidget {
   final List<Order> orders;
-  const MyCartPage({super.key, required this.orders});
+  const MyCartPage({super.key, this.orders = const []});
 
   @override
   Widget build(BuildContext context) {

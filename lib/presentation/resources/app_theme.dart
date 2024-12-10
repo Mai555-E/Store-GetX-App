@@ -13,13 +13,20 @@ class AppTheme {
         centerTitle: true,
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(size: 20),
-        titleTextStyle:  TextStyle(fontSize: 19, fontWeight: FontWeight.w500,color: Colors.black)
+        titleTextStyle: TextStyle(fontSize: 19, fontWeight: FontWeight.w500, color: Colors.black),
       ),
 
-      // TextFormField
+      textTheme: const TextTheme(
+        headlineLarge: TextStyle(fontSize: 34, color: Colors.black, fontWeight: FontWeight.w700),
+        headlineMedium: TextStyle(fontSize: 28, color: Colors.black, fontWeight: FontWeight.w600),
+        headlineSmall: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+        bodyMedium: TextStyle(fontSize: 16, color: Colors.grey, fontWeight: FontWeight.w400),
+        labelLarge: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w500),
+      ),
+
       inputDecorationTheme: const InputDecorationTheme(
-        labelStyle: TextStyle(color: Colors.black),
-        hintStyle: TextStyle(color: AppColors.grey),
+        hintStyle: TextStyle(fontSize: 14, color: Colors.grey, fontWeight: FontWeight.w400),
+        labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w400),
         outlineBorder: BorderSide(color: Colors.amber),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         contentPadding: EdgeInsets.symmetric(horizontal: 20),
@@ -29,39 +36,34 @@ class AppTheme {
             OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(40)), borderSide: BorderSide(color: AppColors.grey, width: .5)),
       ),
 
-      // ElevatedButton
       elevatedButtonTheme: const ElevatedButtonThemeData(
         style: ButtonStyle(
           shape: WidgetStatePropertyAll(StadiumBorder()),
-          foregroundColor: WidgetStatePropertyAll(Colors.white),
-          backgroundColor: WidgetStatePropertyAll(AppColors.primary),
           fixedSize: WidgetStatePropertyAll(Size.fromHeight(43)),
+          foregroundColor: WidgetStatePropertyAll(Colors.white),
           minimumSize: WidgetStatePropertyAll(Size.fromHeight(43)),
+          backgroundColor: WidgetStatePropertyAll(AppColors.primary),
           surfaceTintColor: WidgetStatePropertyAll(Colors.transparent),
-          textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 20)),
+          textStyle: WidgetStatePropertyAll(TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
         ),
       ),
 
-      // IconButton
       iconButtonTheme: IconButtonThemeData(
         style: IconButton.styleFrom(
-          iconSize: 30,
+          iconSize: 40,
           fixedSize: const Size.square(60),
-          side: const BorderSide(color: Colors.transparent, width: .5),
+          side: const BorderSide(color: Colors.grey, width: .5),
         ),
       ),
 
-      // TextButton
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           alignment: Alignment.centerLeft,
           foregroundColor: AppColors.primary,
           padding: const EdgeInsets.only(left: 5),
-          textStyle: const TextStyle(height: 1, fontWeight: FontWeight.w500, decoration: TextDecoration.underline),
         ),
       ),
 
-      // Chip
       chipTheme: ChipThemeData(
         showCheckmark: false,
         backgroundColor: Colors.white,
@@ -70,7 +72,6 @@ class AppTheme {
         shape: StadiumBorder(side: BorderSide(color: Colors.grey.shade300)),
       ),
 
-      // ModalBottomSheet
       bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.white),
     );
   }
